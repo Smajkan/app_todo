@@ -6,14 +6,15 @@ import ToDoList from './components/ToDoList';
 
 function App() {
 
-  const [inputText, setInputText] = useState("");
 
+  const [inputText, setInputText] = useState("");
+  //Ovo dodajemo zbog zavrseno, nezavrseno...
   const [todos, setTodos] = useState([]);
   return (
     <div className="App">
       <header>Aldin's ToDo </header>
 
-      <Form setInputText={setInputText} />
+      <Form inputText={inputText} todos={todos} setTodos={setTodos} setInputText={setInputText} />
       <ToDoList />
 
 

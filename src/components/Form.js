@@ -1,20 +1,33 @@
 import React from "react";
 
 //Isto sto i function Form(){//code}
-const Form = ({ setInputText }) => {
+const Form = ({ setInputText, todos, setTodos, inputText }) => {
 
 
     const inputTextHandler = (e) => {
         console.log(e.target.value);
         setInputText(e.target.value);
     };
+
+
+    //e.preventDefault() sprjecava da se stranica refreshuje
+    //Linkujemo to sa buttonom
+    //Ovdje također trebamo setovati listu
+    const submitTodoHandler = (e) => {
+        e.preventDefault();
+        setTodos([
+            ...todos, { text: inputText, completed: false, id: Math.random() + 1000 }
+        ]);
+
+    };
+
     //Vraćati ćemo određenu vrijednost
     //vanilla-Code
     //Unutar inputa cemo dodati onClick (event)
     return (
         <form>
             <input onChange={inputTextHandler} type="text" className="todo-input" />
-            <button className="todo-button" type="submit">
+            <button onClick={submitTodoHandler} className="todo-button" type="submit">
                 <i className="fas fa-plus-square"></i>
             </button>
             <div className="select">
