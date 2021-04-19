@@ -3,8 +3,8 @@ import React from 'react'
 const Todo = ({ text, todo, todos, setTodos }) => {
     //Eventi
     const deleteHandler = () => {
-        // setTodos(todos.filter(el => el.id !== todo.id))
-        console.log(todo)
+        setTodos(todos.filter((el) => el.id !== todo.id))
+
     };
 
 
