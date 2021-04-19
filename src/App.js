@@ -6,6 +6,10 @@ import ToDoList from './components/ToDoList';
 
 function App() {
 
+  //pokrece se jednom
+  useEffect(() => {
+    getLocalTodos();
+  }, []);
 
   const [inputText, setInputText] = useState("");
   //Ovo dodajemo zbog zavrseno i nezavrseno...
@@ -14,11 +18,28 @@ function App() {
   const [status, setStatus] = useState('all'); //default je all
   const [filteredTodos, setFilteredTodos] = useState([]);
 
-
   //KORISTENJE USEEFFECT-A ZBOG TOGA DA SE FILTRIRANJE UPDATEUJE
   useEffect(() => {
     filterHandler();
+    saveLocalTodos();
   }, [todos, status]);
+
+
+  //Spasavanje todo liste lokalno:
+  const saveLocalTodos = () => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  };
+
+  const getLocalTodos = () => {
+    if (localStorage.getItem('todos') === null) {
+      localStorage.setItem('todos', JSON.stringify([]));
+    } else {
+      let todoLocal = JSON.parse(localStorage.getItem("todos"));
+      setTodos(todoLocal);
+    }
+  };
+
+
 
   //Funkcije
   const filterHandler = () => {
