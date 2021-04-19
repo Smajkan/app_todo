@@ -1,5 +1,7 @@
 import React from "react"
 import './App.css';
+//Ubacivanje komponenata
+import Form from './components/Form';
 
 function App() {
   return (
@@ -7,6 +9,7 @@ function App() {
       <header>Aldin's ToDo list</header>
 
 
+      <Form></Form>
     </div>
   );
 }
