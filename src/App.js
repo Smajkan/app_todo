@@ -2,6 +2,7 @@ import React from "react"
 import './App.css';
 //Ubacivanje komponenata
 import Form from './components/Form';
+import ToDoList from './components/ToDoList';
 
 function App() {
   return (
