@@ -3,13 +3,18 @@ import React from 'react';
 
 //Ubacivanje Todo
 import Todo from './Todo';
-const ToDoList = ({ todos }) => {
+const ToDoList = ({ todos, setTodos }) => {
 
     return (
         <div className="todo-container">
             <ul className="todo-list">
                 {todos.map(todo => (
-                    <Todo key={todo.id} text={todo.text} />
+                    <Todo
+                        setTodos={setTodos}
+                        todos={todos}
+                        key={todo.id}
+                        todo={todo}
+                        text={todo.text} />
                 ))}
 
             </ul>

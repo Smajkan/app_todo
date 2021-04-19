@@ -15,7 +15,7 @@ function App() {
       <header>Aldin's ToDo </header>
 
       <Form inputText={inputText} todos={todos} setTodos={setTodos} setInputText={setInputText} />
-      <ToDoList todos={todos} />
+      <ToDoList setTodos={setTodos} todos={todos} />
 
 
 

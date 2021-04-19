@@ -1,6 +1,12 @@
 import React from 'react'
 
-const Todo = ({ text }) => {
+const Todo = ({ text, todo, todos, setTodos }) => {
+    //Eventi
+    const deleteHandler = () => {
+        // setTodos(todos.filter(el => el.id !== todo.id))
+        console.log(todo)
+    };
+
 
     return (
 
@@ -10,7 +16,7 @@ const Todo = ({ text }) => {
                 <i className="fas fa-check"></i>
             </button>
 
-            <button className="trash-btn">
+            <button onClick={deleteHandler} className="trash-btn">
                 <i className="fas fa-trash"></i>
             </button>
 
