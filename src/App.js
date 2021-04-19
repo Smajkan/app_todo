@@ -8,13 +8,13 @@ function App() {
 
   const [inputText, setInputText] = useState("");
 
-
+  const [todos, setTodos] = useState([]);
   return (
     <div className="App">
-      <header>Aldin's ToDo list</header>
+      <header>Aldin's ToDo </header>
 
-      <Form></Form>
-      <ToDoList></ToDoList>
+      <Form setInputText={setInputText} />
+      <ToDoList />
 
 
 

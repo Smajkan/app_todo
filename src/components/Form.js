@@ -1,17 +1,19 @@
 import React from "react";
 
 //Isto sto i function Form(){//code}
-const Form = () => {
+const Form = ({ setInputText }) => {
 
 
-
+    const inputTextHandler = (e) => {
+        console.log(e.target.value);
+        setInputText(e.target.value);
+    };
     //Vraćati ćemo određenu vrijednost
-
-
     //vanilla-Code
+    //Unutar inputa cemo dodati onClick (event)
     return (
         <form>
-            <input type="text" className="todo-input" />
+            <input onChange={inputTextHandler} type="text" className="todo-input" />
             <button className="todo-button" type="submit">
                 <i className="fas fa-plus-square"></i>
             </button>
