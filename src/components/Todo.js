@@ -5,16 +5,18 @@ const Todo = ({ text, todo, todos, setTodos }) => {
     const deleteHandler = () => {
         setTodos(todos.filter((el) => el.id !== todo.id));
     };
+
     const completeHandler = () => {
-        setTodos(todos.map((item) => {
+        setTodos(todos.map(item => {
             if (item.id === todo.id) {
                 return {
-                    ...item, oompleted: !item.completed
+                    ...item, completed: !item.completed
                 }
             }
-        })
-    }
+            return item;
+        }))
 
+    }
 
     return (
 
