@@ -1,11 +1,11 @@
 import React from "react";
 
 //Isto sto i function Form(){//code}
-const Form = ({ setInputText, todos, setTodos, inputText }) => {
+const Form = ({ setInputText, todos, setTodos, inputText, setStatus }) => {
 
 
     const inputTextHandler = (e) => {
-        console.log(e.target.value);
+
         setInputText(e.target.value);
     };
 
@@ -21,6 +21,11 @@ const Form = ({ setInputText, todos, setTodos, inputText }) => {
         setInputText("");
     };
 
+    //Funkcija koja ce handleovati filtriranje
+    const statusHandler = (e) => {
+        setStatus(e.target.value);
+    }
+
     //Vraćati ćemo određenu vrijednost
     //vanilla-Code
     //Unutar inputa cemo dodati onClick (event)
@@ -31,10 +36,10 @@ const Form = ({ setInputText, todos, setTodos, inputText }) => {
                 <i className="fas fa-plus-square"></i>
             </button>
             <div className="select">
-                <select name="todos" className="filter-todo">
-                    <option value="all">All</option>
-                    <option value="completed">Completed</option>
-                    <option value="uncompleted">Uncompleted</option>
+                <select onChange={statusHandler} name="todos" className="filter-todo">
+                    <option value="Sve">Sve</option>
+                    <option value="Zavrseno">Zavrseno</option>
+                    <option value="Preostalo">Preostalo</option>
                 </select>
             </div>
         </form>
