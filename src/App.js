@@ -59,7 +59,7 @@ function App() {
 
   return (
     <div className="App">
-      <header>Aldin's ToDo </header>
+      <header>Your ToDo list:</header>
 
       <Form inputText={inputText} todos={todos} setTodos={setTodos} setInputText={setInputText} setStatus={setStatus} />
       <ToDoList filteredTodos={filteredTodos} setTodos={setTodos} todos={todos} />
