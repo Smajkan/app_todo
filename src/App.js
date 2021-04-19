@@ -9,8 +9,8 @@ function App() {
     <div className="App">
       <header>Aldin's ToDo list</header>
 
-
       <Form></Form>
+      <ToDoList></ToDoList>
     </div>
   );
 }
