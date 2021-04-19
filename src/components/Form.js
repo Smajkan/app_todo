@@ -18,7 +18,7 @@ const Form = ({ setInputText, todos, setTodos, inputText }) => {
         setTodos([
             ...todos, { text: inputText, completed: false, id: Math.random() + 1000 }
         ]);
-
+        setInputText("");
     };
 
     //Vraćati ćemo određenu vrijednost
@@ -26,7 +26,7 @@ const Form = ({ setInputText, todos, setTodos, inputText }) => {
     //Unutar inputa cemo dodati onClick (event)
     return (
         <form>
-            <input onChange={inputTextHandler} type="text" className="todo-input" />
+            <input value={inputText} onChange={inputTextHandler} type="text" className="todo-input" />
             <button onClick={submitTodoHandler} className="todo-button" type="submit">
                 <i className="fas fa-plus-square"></i>
             </button>
