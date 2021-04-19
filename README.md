@@ -44,7 +44,7 @@ npm run test
 Give a ⭐️ if this project helped you!
 
 ## 📝 License
-❤️ Shoutout to Dev Ed ❤️
+❤️ Shoutout to Dev Ed ❤️ <br />
 Copyright © 2021 [Smajkan](https://github.com/Smajkan).<br />
 This project is [MIT](https://opensource.org/licenses/MIT) licensed.
 
